@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // FECHA DE REFERENCIA
     let dateContext = new Date();
-    const today = new Date(); // limpia la fecha OK
+    const today = new Date(); // Esto tomará automáticamente el 17 de febrero de 2026
 
     // --- 1. CONFIGURACIÓN DEL MAPA (COLOR CLARO ÚNICO) ---
     const coordsUrales = [19.4319, -99.2132];
@@ -667,4 +667,3 @@ if (ctxSegurosTrend) {
         }
     });
 }
-
