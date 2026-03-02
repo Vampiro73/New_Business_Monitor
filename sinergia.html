@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actinver - Sinergia de Grupo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+</head>
+
+<body class="theme-dark">
+    <header class="main-header">
+        <div class="header-left">
+            <img src="images/logo header.png" class="header-logo" alt="Actinver">
+            <div class="divider-v"></div>
+            <span class="header-monitor-text">Business Monitor</span>
+        </div>
+        <div class="header-center">
+            <a href="index.html"><button class="nav-btn-custom">General</button></a>
+            <a href="sinergia.html"><button class="nav-btn-custom active">Sinergia Grupo</button></a>
+            <a href="productos.html"><button class="nav-btn-custom">Productos</button></a>
+            <a href="asesores.html"><button class="nav-btn-custom">Asesores</button></a>
+            <a href="detalle.html"><button class="nav-btn-custom">Sucursales</button></a>
+            <a href="seguros.html"><button class="nav-btn-custom">Seguros</button></a>
+        </div>
+        <div class="header-right">
+            <div class="text-end me-3">
+                <div class="user-name">Claudio Meza Meza</div>
+                <div class="user-session">CERRAR SESIÓN</div>
+            </div>
+            <img src="images/avatar.png" class="rounded-circle border border-secondary" width="40" height="40"
+                alt="Avatar">
+        </div>
+    </header>
+
+    <div class="container-fluid mt-4 px-4">
+        <div class="row">
+            <div class="col-8">
+                <div class="card-custom p-6">
+                    <h6 class="text-info font-weight mb-0">Crecimiento Transversal: Banco & Casa de Bolsa</h6>
+                    <div class="text-end">
+                        <a href="index.html" class="back-arrow">←</a>
+                    </div>
+
+                    <div class="table-responsive mt-3">
+                        <table class="table table-borderless align-middle" style="background-color: transparent;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid #334155; background-color: transparent !important;">
+                                    <th class="text-white small fw-bold pb-3"
+                                        style="background-color: transparent !important;">SUCURSAL</th>
+                                    <th class="text-white small fw-bold pb-3 text-end"
+                                        style="background-color: transparent !important;">CAPTACIÓN BANCO</th>
+                                    <th class="text-white small fw-bold pb-3 text-end"
+                                        style="background-color: transparent !important;">CONVERSIÓN INVERSIÓN</th>
+                                    <th class="text-white small fw-bold pb-3 text-center"
+                                        style="background-color: transparent !important;">EFICIENCIA</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaSinergiaBody">
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Montes Urales</td>
+                                    <td class="text-end" style="background-color: #002646; color: white;">$45,200,000
+                                    </td>
+                                    <td class="text-end fw-bold text-info" style="background-color: #002646;">
+                                        $32,100,000</td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <span class="badge bg-success">71%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Monterrey</td>
+                                    <td class="text-end" style="background-color: #002646; color: white;">$28,500,000
+                                    </td>
+                                    <td class="text-end fw-bold text-info" style="background-color: #002646;">
+                                        $14,250,000</td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <span class="badge bg-warning text-dark">50%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Guadalajara</td>
+                                    <td class="text-end" style="background-color: #002646; color: white;">$35,000,000
+                                    </td>
+                                    <td class="text-end fw-bold text-info" style="background-color: #002646;">
+                                        $21,700,000</td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <span class="badge bg-success">62%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Queretaro</td>
+                                    <td class="text-end" style="background-color: #002646; color: white;">$12,000,000
+                                    </td>
+                                    <td class="text-end fw-bold text-info" style="background-color: #002646;">$5,400,000
+                                    </td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <span class="badge bg-danger">45%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-custom card-reduced">
+                    <div class="card-title">Asistente IA</div>
+
+                    <div class="asistente-container d-flex flex-column flex-grow-1">
+
+                        <textarea class="asistente-input flex-grow-1" placeholder="Escribe tu mensaje..."></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <button class="btn-asistente-blue">Imagen</button>
+                        <button class="btn-asistente-cyan">Voz</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- Aqui va la grafica -->
+
+    <div class="container-fluid mt-4 px-4">
+        <div class="row">
+
+
+            <div class="col-12">
+                <div class="card-custom p-4">
+                    <h6 class="text-info font-weight mb-0">Matríz de Impacto por Integración</h6>
+
+
+                    <div class="table-responsive mt-3">
+                        <div class="chart-container" style="position: relative; height: 400px; width: 100%;">
+                            <canvas id="graficaSinergia"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+
+
+
+
+</body>
+
+</html>
