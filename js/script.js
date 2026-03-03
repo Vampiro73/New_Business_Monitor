@@ -669,3 +669,20 @@ if (ctxSegurosTrend) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // MAPA ACTINVER URALES
+    const coordsUrales = [19.4319, -99.2132];
+    const mapContainer = document.getElementById('map');
+    if (mapContainer) {
+        const map = L.map('map', { zoomControl: false }).setView(coordsUrales, 14);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+        L.marker(coordsUrales).addTo(map).bindPopup('Corporativo Montes Urales').openPopup();
+        setTimeout(() => { map.invalidateSize(); }, 500);
+    }
+
+    // REDIMENSIONAMIENTO AUTOMÁTICO
+    window.addEventListener('resize', () => {
+        Chart.instances.forEach(chart => chart.resize());
+    });
+});
