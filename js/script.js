@@ -493,12 +493,12 @@ if (canvasSinergia) {
             datasets: [{
                 label: 'Captación Banco (MDP)',
                 data: [45.2, 28.5, 35.0, 12.0],
-                backgroundColor: 'rgba(228, 6, 248, 0.7)', // Azul Actinver
+                backgroundColor: '#87ADFA', // Azul Actinver
                 borderRadius: 5
             }, {
                 label: 'Conversión Inversión (MDP)',
                 data: [32.1, 14.2, 21.7, 5.4],
-                backgroundColor: '#ff00ee', // Cian Neón
+                backgroundColor: '#9B67F6', // Otro tono
                 borderRadius: 5
             }]
         },
@@ -667,3 +667,4 @@ if (ctxSegurosTrend) {
         }
     });
 }
+
