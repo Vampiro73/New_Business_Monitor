@@ -501,6 +501,7 @@ if (canvasSinergia) {
                 backgroundColor: '#9B67F6', // Otro tono
                 borderRadius: 5
             }]
+
         },
         options: {
             indexAxis: 'y', // CLAVE: Hace la gráfica horizontal
@@ -570,7 +571,7 @@ if (ctxValor) {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { display: false } // Ocultamos la leyenda para que se vea como tu diseño
+                legend: { display: false } // Ocultamos la leyenda para que se vea como el diseño
             },
             scales: {
                 x: {
@@ -613,7 +614,6 @@ if (ctxSegurosTrend) {
                     borderColor: '#ffffff',
                     borderWidth: 3,
                     pointBackgroundColor: '#ffffff',
-                    pointBorderColor: '#d63384',
                     pointBorderColor: '#0725e4',
                     pointBorderWidth: 4,
                     pointRadius: 8,
@@ -635,7 +635,9 @@ if (ctxSegurosTrend) {
                     data: [40, 50, 45, 60, 75, 90],
                     backgroundColor: '#9B67F6',
                     borderRadius: 0,
+                }
             ]
+
         },
         options: {
             responsive: true,
@@ -667,5 +669,3 @@ if (ctxSegurosTrend) {
         }
     });
 }
-
-
