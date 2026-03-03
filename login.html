@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actinver - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos para asegurar la coherencia con el Dashboard */
+        :root {
+            --actinver-cyan: #00e5ff;
+            --bg-main: #0b111e;
+            --card-bg: #151c2c;
+        }
+        body { background-color: var(--bg-main); color: white; }
+        
+        .bg-login-dark { background-color: var(--bg-main); }
+        .bg-side-dark { background-color: #111827; }
+        
+        .input-field {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #334155;
+            padding: 12px 0;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            border-bottom-color: var(--actinver-cyan);
+        }
+        
+        .btn-login {
+            width: 100%;
+            background-color: var(--actinver-cyan);
+            color: #0b111e;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-login:hover {
+            background-color: #00c2d9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(11, 17, 30, 0.3);
+            border-radius: 50%;
+            border-top-color: #0b111e;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="h-screen flex">
+    <div class="w-full md:w-1/2 bg-login-dark flex flex-col justify-center px-12 lg:px-24 border-r border-slate-800">
+        <div class="max-w-md w-full mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-2">Bienvenido</h2>
+            <p class="text-slate-400 mb-10 font-medium">Ingresa al Business Monitor</p>
+            
+            <form id="loginForm">
+                <div class="mb-6">
+                    <label class="text-xs font-bold uppercase tracking-widest text-info" style="color: var(--actinver-cyan);">Usuario</label>
+                    <input type="text" class="input-field" placeholder="ejemplo@actinver.com.mx" required>
+                </div>
+                <div class="mb-6">
+                    <label class="text-xs font-bold uppercase tracking-widest text-info" style="color: var(--actinver-cyan);">Contraseña</label>
+                    <input type="password" class="input-field" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="btn-login flex justify-center items-center">
+                    <span id="btnText">Entrar al Monitor</span>
+                    <div id="loader" class="spinner"></div>
+                </button>
+            </form>
+            
+            <p class="mt-8 text-center text-slate-500 text-sm">
+                &copy; 2026 Actinver Corporativo
+            </p>
+        </div>
+    </div>
+
+    <div class="hidden md:flex md:w-1/2 bg-side-dark items-center justify-center p-12">
+        <img src="images/logo login.png" alt="Actinver Logo" class="max-w-xs drop-shadow-2xl">
+    </div>
+
+    <script>
+        // Lógica de redirección al Index
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btnText = document.getElementById('btnText');
+            const loader = document.getElementById('loader');
+            const btn = document.getElementById('submitBtn');
+            
+            // Efecto visual de carga
+            btnText.innerText = 'Verificando...';
+            loader.style.display = 'block';
+            btn.style.opacity = '0.8';
+            btn.disabled = true;
+
+            // Simulación de acceso y redirección al Nivel A
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
