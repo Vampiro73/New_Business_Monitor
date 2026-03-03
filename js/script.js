@@ -614,6 +614,7 @@ if (ctxSegurosTrend) {
                     borderWidth: 3,
                     pointBackgroundColor: '#ffffff',
                     pointBorderColor: '#d63384',
+                    pointBorderColor: '#0725e4',
                     pointBorderWidth: 4,
                     pointRadius: 8,
                     tension: 0.1, // Línea casi recta como tu imagen
@@ -624,7 +625,7 @@ if (ctxSegurosTrend) {
                     type: 'bar',
                     label: 'Venta Nueva',
                     data: [15, 20, 25, 30, 35, 40],
-                    backgroundColor: '#ff77e9',
+                    backgroundColor: '#87ADFA',
                     borderRadius: 0,
                 },
                 {
@@ -632,9 +633,8 @@ if (ctxSegurosTrend) {
                     type: 'bar',
                     label: 'Renovaciones',
                     data: [40, 50, 45, 60, 75, 90],
-                    backgroundColor: '#e619c3',
+                    backgroundColor: '#9B67F6',
                     borderRadius: 0,
-                }
             ]
         },
         options: {
@@ -667,4 +667,5 @@ if (ctxSegurosTrend) {
         }
     });
 }
+
 
