@@ -3,10 +3,10 @@
 :root {
     --bg-main: #000b14;
     --bg-card: #002646;
+    --bg-card2: #002d54; /* Variable añadida para evitar error en card-custom-2 */
     --bg-header: #002646;
     --actinver-cyan: #00e5ff;
     --actinver-aqua: #00ffcc;
-    /* Color específico para títulos de detalle */
     --text-white: #ffffff;
     --text-muted: #ffffff;
     --hover-gray: #9D9D9D;
@@ -21,25 +21,23 @@ body.theme-dark {
 }
 
 /* --- HEADER & NAVIGATION --- */
-/* Modifica el .main-header para que sea flexible */
 .main-header {
     background-color: var(--bg-header);
     min-height: 70px;
     height: auto;
     padding: 0 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex; /* CAMBIAR DE GRID A FLEX */
+    display: flex;
     align-items: center;
 }
 
-/* Para que el botón de cerrar sesión se vea bien */
 .btn-logout img {
-    filter: brightness(0) invert(1); /* Lo pone blanco si el icono es oscuro */
+    filter: brightness(0) invert(1);
     transition: 0.3s;
 }
 
 .btn-logout:hover img {
-    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg); /* Color cian al pasar el mouse */
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 
 .header-left {
@@ -79,7 +77,6 @@ body.theme-dark {
     transition: all 0.3s ease;
 }
 
-/* ROLLOVER Y ACTIVO (UNIFICADOS) */
 .nav-btn-custom:hover,
 .nav-btn-custom.active {
     background-color: var(--actinver-cyan) !important;
@@ -108,7 +105,7 @@ body.theme-dark {
 /* --- CARDS --- */
 .card-custom {
     background: var(--bg-card);
-    border: 1px solid rgba(161, 55, 55, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 1.2rem;
     height: 100%;
@@ -155,7 +152,7 @@ body.theme-dark {
 
 /* --- TABLAS --- */
 .table-custom {
-    color: #00ffcc;
+    color: var(--actinver-aqua);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -186,7 +183,7 @@ body.theme-dark {
     color: #000;
     border-radius: 4px;
     font-weight: bold;
-    padding: 2px 5px;
+    padding: 2px 5px; 
 }
 
 .btn-cal {
@@ -196,14 +193,14 @@ body.theme-dark {
     font-size: 0.75rem;
     flex: 1;
     padding: 5px;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .btn-cal.active {
     background: var(--actinver-cyan);
     color: #000;
     border-radius: 4px;
-    font-weight: 600;
+    font-weight: 600; 
 }
 
 /* --- ASISTENTE IA --- */
@@ -230,6 +227,7 @@ body.theme-dark {
     resize: none;
     outline: none;
     color: #333;
+    box-sizing: border-box; /* Asegura que no desborde con el padding */
 }
 
 .btn-asistente-blue {
@@ -366,6 +364,12 @@ body.theme-dark {
     width: 100%;
 }
 
+.chart-container {
+    height: 400px;
+    width: 100%;
+    padding: 15px 0;
+}
+
 /* --- DETALLE CLIENTE INFO --- */
 .detalle-info-container {
     margin-top: 2rem;
@@ -419,27 +423,10 @@ body.theme-dark {
     padding: 5px 10px;
 }
 
-/*-- AQUI VA LO NUEVO DE LA GRAFICA SINERGIA --/
-
-/* Esto corrige el desborde de tu captura de pantalla */
+/* --- ASISTENTE IA (DEPURADO) --- */
 .asistente-input {
     width: 100% !important;
     box-sizing: border-box !important; 
-    flex-grow: 1 !important;
-}
-
-/* Contenedor para que la gráfica no desaparezca */
-.chart-container {
-    height: 400px;
-    width: 100%;
-}
-
-/* --- AJUSTES FINALES SINERGIA --- */
-
-/* Arreglo para el Asistente IA: Mantiene el cuadro blanco dentro del azul */
-.asistente-input {
-    width: 100% !important;
-    box-sizing: border-box !important; /* Evita que el padding lo empuje hacia afuera */
     padding: 15px !important;
     background-color: #ffffff !important;
     color: #000000 !important;
@@ -447,9 +434,10 @@ body.theme-dark {
     border: none;
     resize: none;
     margin-top: 10px;
+    flex-grow: 1 !important;
 }
 
-/* Alineación de tarjetas para que tengan la misma altura */
+/* Alineación de tarjetas */
 .row {
     display: flex;
     align-items: stretch;
@@ -461,57 +449,67 @@ body.theme-dark {
     height: 100%;
 }
 
-/* Contenedor de la gráfica */
-.chart-container {
-    padding: 15px 0;
+/* --- RESPONSIVE Y MENÚ (UNIFICADO) --- */
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
 }
 
-/* Estilos para el Menú de Hamburguesa */
 @media (max-width: 991px) {
     .navbar-collapse {
-        background: rgba(15, 23, 42, 0.95); /* El mismo fondo oscuro del monitor */
+        background: #001a33; /* Color sólido para mejor legibilidad */
         padding: 20px;
         border-radius: 12px;
         margin-top: 10px;
-        border: 1px solid rgba(0, 212, 255, 0.2);
+        border: 1px solid var(--actinver-cyan);
         backdrop-filter: blur(10px);
     }
     
     .nav-btn-custom {
         text-align: left;
         padding: 12px 20px !important;
-    }
-}
+        width: 100%;}
 
-/* Evitar que el botón de hamburguesa se vea azul feo al darle clic */
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.main-header {
-    background-color: var(--bg-header);
-    min-height: 70px;
-    height: auto;
-    display: flex !important; /* Cambiado de grid para flexibilidad */
-    align-items: center;
-    padding: 0 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.user-photo {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 2px solid var(--actinver-cyan);
-}
-
+        /* --- AJUSTE DE EMERGENCIA PARA MÓVIL (PEGAR AL FINAL) --- */
 @media (max-width: 991px) {
-    .navbar-collapse {
-        background: #001a33;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid var(--actinver-cyan);
-        margin-top: 10px;
+    /* 1. Achicamos el logo para que no choque con el nombre */
+    .header-logo {
+        height: 18px !important;
+        width: auto !important;
+    }
+
+    /* 2. Ocultamos textos secundarios para ganar espacio horizontal */
+    .header-monitor-text, 
+    .divider-v {
+        display: none !important;
+    }
+
+    /* 3. Ajustamos el bloque de Claudio (text-end me-3) */
+    .text-end.me-3 {
+        margin-right: 8px !important;
+        line-height: 1 !important;
+    }
+
+    .user-name {
+        font-size: 0.7rem !important; /* Nombre más pequeño */
+        white-space: nowrap;
+    }
+
+    .user-session {
+        font-size: 0.6rem !important; /* Cerrar sesión más pequeño */
+        letter-spacing: 0px;
+    }
+
+    /* 4. El Avatar: lo bajamos de 40px a 30px para que quepa bien */
+    .header-right img.rounded-circle {
+        width: 30px !important;
+        height: 30px !important;
+        flex-shrink: 0;
+    }
+
+    /* 5. Alineación general del header en móvil */
+    .main-header {
+        padding: 0 10px !important;
+        justify-content: space-between !important;
     }
 }
