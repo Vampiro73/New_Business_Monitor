@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actinver - Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="theme-dark">
+
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark w-100 p-0">
+            <div class="container-fluid">
+                <div class="header-left d-flex align-items-center">
+                    <img src="images/logo header.png" class="header-logo" alt="Actinver">
+                    <div class="divider-v"></div>
+                    <span class="header-monitor-text d-none d-sm-inline">Business Monitor</span>
+                </div>
+
+                <button class="navbar-toggler border-0 ms-auto me-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuActinver" aria-controls="menuActinver" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="menuActinver">
+                    <div class="navbar-nav gap-2 py-3 py-lg-0">
+                        <a href="index.html" class="nav-link p-0"><button class="nav-btn-custom">General</button></a>
+                        <a href="sinergia.html" class="nav-link p-0"><button class="nav-btn-custom">Sinergia</button></a>
+                        <a href="productos.html" class="nav-link p-0"><button class="nav-btn-custom active">Productos</button></a>
+                        <a href="asesores.html" class="nav-link p-0"><button class="nav-btn-custom">Asesores</button></a>
+                        <a href="seguros.html" class="nav-link p-0"><button class="nav-btn-custom">Seguros</button></a>
+                    </div>
+                </div>
+
+                <div class="header-right d-flex align-items-center ms-auto ms-lg-0">
+                    <div class="user-profile d-flex align-items-center">
+                        <span class="user-name d-none d-md-inline me-2 text-white">Claudio Meza</span>
+                        <img src="images/avatar.png" class="user-photo" alt="Usuario">
+                        <a href="login.html" class="logout-text ms-3 text-decoration-none"
+                            style="color: var(--actinver-cyan); font-size: 0.85rem; font-weight: 600;">
+                            Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid px-4 mt-4">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card card-custom p-4">
+                    <h6 class="text-info font-weight mb-0">Portafolio de Productos</h6>
+                    <div class="chart-container-main">
+                        <canvas id="donutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card card-custom p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h6 class="text-info font-weight mb-0">Listado de Clientes ONBOARDING</h6>
+                        <a href="index.html" class="back-arrow">←</a>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-custom-2 table-hover" style="background-color: #002646 !important;">
+                            <thead>
+                                <tr>
+                                    <th
+                                        style="background-color: #002646; color: #00e5ff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        CLIENTE</th>
+                                    <th
+                                        style="background-color: #002646; color: #00e5ff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        PRODUCTO</th>
+                                    <th
+                                        style="background-color: #002646; color: #00e5ff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        STATUS</th>
+                                    <th class="text-center"
+                                        style="background-color: #002646; color: #00e5ff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        ACCIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Claudio Meza Meza</td>
+                                    <td style="background-color: #002646; color: white;">Mercado Dinámico</td>
+                                    <td style="background-color: #002646;"><span class="text-info">Completado</span>
+                                    </td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <a href="detalle_cliente.html"><button
+                                                class="btn-asistente-blue">DETALLE</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Alejandro Ramos Espinoza</td>
+                                    <td style="background-color: #002646; color: white;">Fondo Estratégico</td>
+                                    <td style="background-color: #002646;"><span class="text-info">En Proceso</span>
+                                    </td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <a href="detalle_cliente_2.html"><button
+                                                class="btn-asistente-blue">DETALLE</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Sofía Hernández García</td>
+                                    <td style="background-color: #002646; color: white;">Crédito PyME</td>
+                                    <td style="background-color: #002646;"><span class="text-secondary">Pendiente</span>
+                                    </td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <a href="detalle_cliente_3.html"><button
+                                                class="btn-asistente-blue">DETALLE</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #002646; color: white;">Ricardo Torres Luna</td>
+                                    <td style="background-color: #002646; color: white;">Acciones USA</td>
+                                    <td style="background-color: #002646;"><span class="text-info">En Proceso</span>
+                                    </td>
+                                    <td class="text-center" style="background-color: #002646;">
+                                        <a href="detalle_cliente_4.html"><button
+                                                class="btn-asistente-blue">DETALLE</button></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Plugin para poner el texto 100% en el centro
+        const centerTextPlugin = {
+            id: 'centerText',
+            afterDraw: (chart) => {
+                const { ctx, chartArea: { top, bottom, left, right, width, height } } = chart;
+                ctx.save();
+                ctx.font = 'bold 30px Inter';
+                ctx.fillStyle = 'white';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('100%', left + width / 2, top + height / 2);
+                ctx.restore();
+            }
+        };
+
+        const ctxDonut = document.getElementById('donutChart');
+        if (ctxDonut) {
+            new Chart(ctxDonut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Fondos', 'Capitales', 'Inversiones', 'Créditos', 'Tracks', 'Tarjeta de crédito'],
+                    datasets: [{
+                        data: [30, 20, 15, 10, 15, 10],
+                        backgroundColor: [
+                            '#E669FC',
+                            '#B511D2',
+                            '#750888',
+                            '#2A13A8',
+                            '#5639FA',
+                            '#AA9BFF'
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#fff',
+                                font: { size: 10 },
+                                padding: 20
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                },
+                plugins: [centerTextPlugin] // Se activa el plugin aquí
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
