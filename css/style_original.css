@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-main: #000b14;
+    --bg-card: #002646;
+    --bg-header: #001a2c;
+    --actinver-cyan: #00e5ff;
+    --text-white: #ffffff;
+    --text-muted: #ffffff; /* Este es mi original antes de haber puesto el blanco #b0bec5 */
+    --hover-gray: #9D9D9D;
+}
+
+body.theme-dark {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+}
+
+/* Header Grid */
+.main-header {
+    background-color: var(--bg-header);
+    height: 70px;
+    padding: 0 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.header-left { display: flex; align-items: center; }
+.header-logo { height: 30px; }
+.divider-v { width: 1px; height: 25px; background: rgba(255,255,255,0.2); margin: 0 20px; }
+.header-monitor-text { font-size: 1rem; font-weight: 300; }
+
+.header-center { display: flex; gap: 10px; }
+.nav-btn-custom {
+    background: transparent; border: none; color: var(--text-white);
+    padding: 5px 22px; font-size: 0.85rem; border-radius: 20px; cursor: pointer;
+}
+.nav-btn-custom.active { background-color: var(--actinver-cyan); color: #000; font-weight: 600; }
+
+.header-right { display: flex; justify-content: flex-end; align-items: center; }
+.user-name { font-size: 0.85rem; font-weight: 600; }
+.user-session { font-size: 0.65rem; color: var(--actinver-cyan); cursor: pointer; letter-spacing: 1px; }
+
+/* Cards */
+.card-custom {
+    background-color: #00e5ff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-reduced {
+    min-height: 255px !important;
+    height: 255px !important;
+}
+
+.card-title { font-size: 0.85rem; color: var(--actinver-cyan); text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; letter-spacing: 0.5px; }
+
+/* Calendario */
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 0.75rem; }
+.cal-date { padding: 4px; color: #fff; }
+.cal-today { background: var(--actinver-cyan); color: #000; border-radius: 4px; font-weight: bold; padding: 2px 5px; }
+.btn-cal { background: transparent; border: none; color: var(--text-muted); font-size: 0.75rem; flex: 1; padding: 5px; cursor: pointer; }
+.btn-cal.active { background: var(--actinver-cyan); color: #000; border-radius: 4px; font-weight: 600; }
+
+/* Asistente */
+.asistente-container { background: #fff; border-radius: 5px; padding: 10px; flex-grow: 1; margin-bottom: 10px; }
+.asistente-header { color: #333; font-weight: 700; font-size: 0.75rem; margin-bottom: 5px; }
+.asistente-input { border: none; width: 100%; height: 50px; font-size: 0.8rem; resize: none; outline: none; color: #333; }
+.btn-asistente-blue { background: #0056b3; border: none; color: #fff; padding: 5px 15px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.btn-asistente-cyan { background: var(--actinver-cyan); border: none; color: #000; padding: 5px 15px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+
+/* Sucursales */
+.sucursal-scroll-list { overflow-y: auto; flex-grow: 1; scrollbar-width: thin; scrollbar-color: var(--actinver-cyan) transparent; }
+.sucursal-item { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.sucursal-item.active { background: #fff; color: #000; padding: 8px 10px; border-radius: 4px; margin: 4px 0; }
+.suc-val { color: var(--actinver-cyan); font-weight: 700; }
+.sucursal-item.active .suc-val { color: #0056b3; }
+
+/* Mapa Overlay */
+.map-label-overlay { position: absolute; top: 15px; left: 15px; z-index: 1000; background: rgba(0,26,44,0.8); padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; }
+
+/* Funnel */
+.funnel-container { display: flex; gap: 10px; }
+.funnel-step {
+    flex: 1;
+    background: #002646;
+    border-top: 4px solid var(--actinver-cyan);
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 4px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.funnel-step.completed { background: #fff; color: #000; border-top: none; }
+.funnel-label { font-size: 0.65rem; margin-bottom: 5px; color: var(--text-muted); line-height: 1.1; height: 25px; display: flex; align-items: center; justify-content: center; }
+.funnel-step.completed .funnel-label { color: #666; }
+.funnel-number { font-size: 1.4rem; font-weight: 700; }
+
+.chart-container-flex { flex-grow: 1; position: relative; width: 100%; height: 100%; }
+
+/* Estilos específicos para la vista de detalle */
+        .back-arrow {
+            text-decoration: none !important;
+            color: white !important;
+            font-size: 2rem;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .back-arrow:hover {
+            color: var(--actinver-accent) !important;
+        }
+        .card-kpi {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card-kpi:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .table-custom {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .table-custom thead {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+                .card-custom {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #002646;
+        }
+
+        .card-kpi {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chart-container-main {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        /* COLOR AQUA/CIAN DE DETALLE.HTML */
+        .title-card-actinver {
+            color: #00ffcc; 
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Flecha de regreso (Sin tocar) */
+        .back-arrow {
+            text-decoration: none !important;
+            color: white !important;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+                .card-custom {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(20, 24, 35, 0.6);
+        }
+
+        .card-kpi {
+            background: #002646;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chart-container-main {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        /* COLOR AQUA/CIAN DE DETALLE.HTML */
+        .title-card-actinver {
+            color: #00ffcc; 
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Flecha de regreso (Sin tocar) */
+        .back-arrow {
+            text-decoration: none !important;
+            color: white !important;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        /* ROLLOVER IDÉNTICO AL DE GENERAL */
+        /* Al pasar el mouse, aplicamos los mismos estilos que tiene tu clase .active en style.css */
+        .nav-btn-custom:hover {
+            background-color: var(--actinver-cyan) !important;
+            color: #000 !important;
+            font-weight: 600;
+        }
+
+        /* Estilo para la flecha de regreso */
+        .back-arrow {
+            text-decoration: none !important;
+            color: white !important;
+            font-size: 2rem;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .back-arrow:hover {
+            color: var(--actinver-cyan) !important;
+        }
+
+        /* Contenedor de datos adicionales de detalle */
+        .detalle-info-container {
+            margin-top: 2rem;
+            text-align: left;
+            padding: 0 2rem;
+        }
+        .detalle-item {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
