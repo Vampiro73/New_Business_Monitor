@@ -854,3 +854,46 @@ if (ctxMarketing) {
         }
     });
 }
+
+// Lógica para la sección de Loyalty
+if (document.getElementById('graficaLoyalty')) {
+    const ctxLoyalty = document.getElementById('graficaLoyalty').getContext('2d');
+    new Chart(ctxLoyalty, {
+        type: 'line',
+        data: {
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Retención de Clientes (%)',
+                data: [92, 88, 85, 89, 91, 94],
+                borderColor: '#0dcaf0', 
+                backgroundColor: 'rgba(13, 202, 240, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#00e5ff',
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                    ticks: { 
+                        color: '#0dcaf0',
+                        callback: function(value) { return value + '%'; }
+                    }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { color: '#ffffff' }
+                }
+            }
+        }
+    });
+}
