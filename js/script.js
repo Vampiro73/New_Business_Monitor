@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Datos reales: Nombre, Latitud y Longitud
         const sedesData = [
-            { n: "Montes Urales (Corp)", lat: 19.4319, lng: -99.2132 },
+            { n: "Montes Urales (Corp)", lat: 19.4239, lng: -99.2081 },
             { n: "Monterrey San Pedro", lat: 25.6611, lng: -100.3531 },
             { n: "Guadalajara Américas", lat: 20.6921, lng: -103.3754 },
             { n: "Querétaro Quintana", lat: 20.5936, lng: -100.3928 },
