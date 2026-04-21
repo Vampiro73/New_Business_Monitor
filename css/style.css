@@ -250,12 +250,40 @@ body.theme-dark {
     font-weight: 600;
 }
 
-/* --- COMPONENTES ESPECÍFICOS --- */
-.sucursal-scroll-list {
+/* --- COMPONENTES ESPECÍFICOS (SUCURSALES Y MAPA) --- */
+
+/* 1. La Lista: Adaptable según la pantalla */
+#sucursal-list {
     overflow-y: auto;
-    flex-grow: 1;
     scrollbar-width: thin;
     scrollbar-color: var(--actinver-cyan) transparent;
+    height: 550px; /* Altura ideal para que luzca en Laptop */
+    display: block;
+}
+
+/* 2. El Mapa: Ajustado para que NO se salga de la caja */
+#map {
+    height: 550px !important; /* IMPORTANTE: Debe medir lo mismo que la lista en PC */
+    width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    border-radius: 8px;
+}
+
+/* 3. El Ajuste para Móvil (Cuando minimizas o ves en celular) */
+@media (max-width: 768px) {
+    #sucursal-list {
+        height: 250px; /* Se encoge para dar espacio */
+    }
+    
+    #map {
+        height: 350px !important; /* Altura cómoda para ver en el teléfono */
+    }
+}
+
+/* 4. Muro de contención (Asegúrate de que la tarjeta no deje salir nada) */
+.card-body, .card {
+    overflow: hidden; 
 }
 
 .sucursal-item {
