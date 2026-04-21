@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actinver - Fondos de Inversión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="theme-dark">
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark w-100 p-0">
+            <div class="container-fluid">
+                <div class="header-left d-flex align-items-center">
+                    <img src="images/logo-header.png" class="header-logo" alt="Actinver">
+                    <div class="divider-v"></div>
+                    <span class="header-monitor-text d-none d-sm-inline">Business Monitor</span>
+                </div>
+
+                <button class="navbar-toggler border-0 ms-auto me-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuActinver" aria-controls="menuActinver" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="menuActinver">
+                    <div class="navbar-nav gap-2 py-3 py-lg-0">
+                        <a href="index.html" class="nav-link p-0"><button class="nav-btn-custom">General</button></a>
+                        <a href="sinergia.html" class="nav-link p-0"><button class="nav-btn-custom">Sinergia</button></a>
+                        <a href="productos.html" class="nav-link p-0"><button class="nav-btn-custom">Productos</button></a>
+                        <a href="asesores.html" class="nav-link p-0"><button class="nav-btn-custom">Asesores</button></a>
+                        <a href="seguros.html" class="nav-link p-0"><button class="nav-btn-custom">Seguros</button></a>
+                        <a href="compliance.html" class="nav-link p-0"><button class="nav-btn-custom">Compliance</button></a>
+                        <a href="benchmark.html" class="nav-link p-0"><button class="nav-btn-custom">Benchmark</button></a>
+                        <a href="marketing.html" class="nav-link p-0"><button class="nav-btn-custom">Marketing</button></a>
+                        <a href="loyalty_2.html" class="nav-link p-0"><button class="nav-btn-custom active">Loyalty</button></a>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="text-end me-3">
+                        <div class="user-name">Tania Barrios</div>
+                        <a href="login.html" class="user-session text-decoration-none">CERRAR SESIÓN</a>
+                    </div>
+                    <img src="images/avatar.png" class="rounded-circle border border-secondary" width="40" height="40"
+                        alt="Avatar">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid mt-1 pt-3 pb-5">
+        <div class="card-custom p-4 mb-5 shadow">
+
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h6 class="text-info fw-bold mb-0"
+                    style="font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase;">Fondos de Inversión</h6>
+                <a href="index.html" class="back-arrow text-decoration-none" style="color: #fff; font-size: 24px;">←</a>
+            </div>
+
+            <div class="button-group filter-button-group d-flex gap-2 mb-4">
+                <button class="btn btn-sm btn-outline-info active px-3" data-filter="*">Todos</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".deuda">Fondos de Deuda</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".variable">Fondos de Renta
+                    Variable</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".mixtos">Fondos Mixtos</button>
+            </div>
+
+            <div class="grid">
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <<div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- para la modal A-->
+
+    <div class="modal fade" id="modalClienteA" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info shadow-lg">
+                <div class="p-3 text-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="card-custom p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <h5 class="text-info font-weight mb-0">Sandra Karina Reyes Gómez</h5>
+                                <p class="text-white small mb-0">Customer Loyalty</p>
+                            </div>
+                        </div>
+                        <hr class="opacity-10 mb-3">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center border-end border-secondary">
+                                <img src="images/a.png" class="rounded-circle mb-3 border border-info p-2" width="135">
+                                <div class="mb-3">
+                                    <span class="text-white small me-2">ESTATUS</span>
+                                    <span class="badge bg-success text-white px-3 py-1"
+                                        style="font-size: 0.75rem;">PREMIUM</span>
+                                </div>
+                                <div class="detalle-info-container">
+                                    <div class="detalle-item mb-2 text-start px-3">
+                                        <small class="text-white-50 d-block" style="font-size: 0.7rem;">RFC</small>
+                                        <span class="text-info">CALP900101ABC</span>
+                                    </div>
+                                    <div class="detalle-item mb-2 text-start px-3">
+                                        <small class="text-white-50 d-block" style="font-size: 0.7rem;">CAPITAL
+                                            TOTAL</small>
+                                        <span class="text-info fw-bold">$12,500,000.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 ps-md-5">
+                                <h6 class="text-info font-weight mb-3">PRODUCTOS E INVERSIONES</h6>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Cuenta de Cheques</span>
+                                    <span class="text-success small">✔ ACTIVA</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Tarjetas de Crédito</span>
+                                    <span class="text-success small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">SGMM</span>
+                                    <span class="text-success small">✔ RENOVADO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Fondos de Renta Variable</span>
+                                    <span class="text-success small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div class="checklist-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="text-white small">Estrategias Fiscales</span>
+                                    <span class="text-success small">✔ EN REGLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Termina modal-->
+
+    <!-- para la modal B-->
+
+    <div class="modal fade" id="modalClienteB" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info shadow-lg">
+                <div class="p-3 text-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="card card-custom p-4">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <h5 class="text-info font-weight mb-0">Yahairo Carmelo Benitez Lozano</h5>
+                                <p class="text-white small mb-0">Customer Loyalty</p>
+                            </div>
+
+                        </div>
+
+                        <hr class="opacity-10 mb-3">
+
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center border-end border-secondary">
+                                <img src="images/b.png" class="rounded-circle mb-3 border border-info p-2" width="135">
+                                <div class="mb-3">
+                                    <span class="text-white small me-2">ESTATUS</span>
+                                    <span class="badge bg-success text-white px-3 py-1"
+                                        style="font-size: 0.75rem;">PREMIUM</span>
+                                </div>
+
+                                <div class="detalle-info-container">
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">RFC</small>
+                                        <span class="text-info">CALP900101ABC</span>
+                                    </div>
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">CAPITAL
+                                            TOTAL</small>
+                                        <span class="text-info fw-bold">$12,500,000.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 ps-md-5">
+                                <h6 class="text-info font-weight mb-3">PRODUCTOS E INVERSIONES</h6>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Cuenta de Cheques</span>
+                                    <span class="text-white bg-success px-2 small">✔ ACTIVA</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Tarjetas de Crédito de Alta Gama</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTEO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">SGMM</span>
+                                    <span class="text-white bg-success px-2 small">✔ RENOVADO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Fondos de Renta Variable</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div class="checklist-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="text-white small">Estrategias Fiscales</span>
+                                    <span class="text-white bg-success px-2 small">✔ EN REGLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Termina modal-->
+
+    <!-- para la modal C-->
+
+    <div class="modal fade" id="modalClienteC" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info shadow-lg">
+                <div class="p-3 text-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="card card-custom p-4">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <h5 class="text-info font-weight mb-0">Johnn Pérez Nájera</h5>
+                                <p class="text-white small mb-0">Customer Loyalty</p>
+                            </div>
+
+                        </div>
+
+                        <hr class="opacity-10 mb-3">
+
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center border-end border-secondary">
+                                <img src="images/c.png" class="rounded-circle mb-3 border border-info p-2" width="135">
+                                <div class="mb-3">
+                                    <span class="text-white small me-2">ESTATUS</span>
+                                    <span class="badge bg-success text-white px-3 py-1"
+                                        style="font-size: 0.75rem;">PREMIUM</span>
+                                </div>
+
+                                <div class="detalle-info-container">
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">RFC</small>
+                                        <span class="text-info">CALP900101ABC</span>
+                                    </div>
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">CAPITAL
+                                            TOTAL</small>
+                                        <span class="text-info fw-bold">$12,500,000.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 ps-md-5">
+                                <h6 class="text-info font-weight mb-3">PRODUCTOS E INVERSIONES</h6>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Cuenta de Cheques</span>
+                                    <span class="text-white bg-success px-2 small">✔ ACTIVA</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Tarjetas de Crédito de Alta Gama</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTEO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">SGMM</span>
+                                    <span class="text-white bg-success px-2 small">✔ RENOVADO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Fondos de Renta Variable</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div class="checklist-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="text-white small">Estrategias Fiscales</span>
+                                    <span class="text-white bg-success px-2 small">✔ EN REGLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Termina modal-->
+
+    <!-- para la modal D-->
+
+    <div class="modal fade" id="modalClienteD" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info shadow-lg">
+                <div class="p-3 text-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="card card-custom p-4">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <h5 class="text-info font-weight mb-0">Francisco Petrarca Heinz</h5>
+                                <p class="text-white small mb-0">Customer Loyalty</p>
+                            </div>
+
+                        </div>
+
+                        <hr class="opacity-10 mb-3">
+
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center border-end border-secondary">
+                                <img src="images/d.png" class="rounded-circle mb-3 border border-info p-2" width="135">
+                                <div class="mb-3">
+                                    <span class="text-white small me-2">ESTATUS</span>
+                                    <span class="badge bg-warning text-white px-3 py-1"
+                                        style="font-size: 0.75rem;">CANDIDATO</span>
+                                </div>
+
+                                <div class="detalle-info-container">
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">RFC</small>
+                                        <span class="text-info">CALP900101ABC</span>
+                                    </div>
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">CAPITAL
+                                            TOTAL</small>
+                                        <span class="text-info fw-bold">$7,500,000.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 ps-md-5">
+                                <h6 class="text-info font-weight mb-3">PRODUCTOS E INVERSIONES</h6>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Cuenta de Cheques</span>
+                                    <span class="text-white bg-danger px-2 small">✘ VENCIDA</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Tarjetas de Crédito de Alta Gama</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTEO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">SGMM</span>
+                                    <span class="text-white bg-danger px-2 small">✘ VENCIDO</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Fondos de Renta Variable</span>
+                                    <span class="text-white bg-warning px-2 small">PRÓXIMO VENCIMIENTO</span>
+                                </div>
+
+                                <div class="checklist-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="text-white small">Estrategias Fiscales</span>
+                                    <span class="text-white bg-success px-2 small">✔ EN REGLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Termina modal-->
+
+    <!-- para la modal E-->
+
+    <div class="modal fade" id="modalClienteE" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info shadow-lg">
+                <div class="p-3 text-end">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="card card-custom p-4">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <h5 class="text-info font-weight mb-0">Macaria Banderas Hoyaju</h5>
+                                <p class="text-white small mb-0">Customer Loyalty</p>
+                            </div>
+
+                        </div>
+
+                        <hr class="opacity-10 mb-3">
+
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center border-end border-secondary">
+                                <img src="images/e.png" class="rounded-circle mb-3 border border-info p-2" width="135">
+                                <div class="mb-3">
+                                    <span class="text-white small me-2">ESTATUS</span>
+                                    <span class="badge bg-success text-white px-3 py-1"
+                                        style="font-size: 0.75rem;">PREMIUM</span>
+                                </div>
+
+                                <div class="detalle-info-container">
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">RFC</small>
+                                        <span class="text-info">CALP900101ABC</span>
+                                    </div>
+                                    <div class="detalle-item mb-2">
+                                        <small class="text-white d-block" style="font-size: 0.7rem;">CAPITAL
+                                            TOTAL</small>
+                                        <span class="text-info fw-bold">$37,000,000.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 ps-md-5">
+                                <h6 class="text-info font-weight mb-3">PRODUCTOS E INVERSIONES</h6>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Cuenta de Cheques</span>
+                                    <span class="text-white bg-success px-2 small">✔ ACTIVA</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Tarjetas de Crédito de Alta Gama</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">SGMM</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div
+                                    class="checklist-item d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                                    <span class="text-white small">Fondos de Renta Variable</span>
+                                    <span class="text-white bg-success px-2 small">✔ AL CORRIENTE</span>
+                                </div>
+
+                                <div class="checklist-item d-flex justify-content-between align-items-center py-2">
+                                    <span class="text-white small">Estrategias Fiscales</span>
+                                    <span class="text-white bg-success px-2 small">✔ EN REGLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Termina modal-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
