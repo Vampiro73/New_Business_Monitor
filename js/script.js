@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date(); // Esto tomará automáticamente el 17 de febrero de 2026
 
     // --- 1. CONFIGURACIÓN DEL MAPA (COLOR CLARO ÚNICO) ---
-    const coordsUrales = [19.4319, -99.2132];
+    const coordsUrales = [19.427018, -99.204594];
     const map = L.map('map', {
         zoomControl: false,
         attributionControl: false
@@ -855,99 +855,121 @@ if (ctxMarketing) {
     });
 }
 
-// Lógica para la sección de Loyalty
-if (document.getElementById('graficaLoyalty')) {
-    const ctxLoyalty = document.getElementById('graficaLoyalty').getContext('2d');
-    new Chart(ctxLoyalty, {
-        type: 'line',
-        data: {
-            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
-            datasets: [{
-                label: 'Retención de Clientes (%)',
-                data: [92, 88, 85, 89, 91, 94],
-                borderColor: '#0dcaf0', 
-                backgroundColor: 'rgba(13, 202, 240, 0.1)',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#00e5ff',
-                pointRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false }
-            },
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                    ticks: { 
-                        color: '#0dcaf0',
-                        callback: function(value) { return value + '%'; }
-                    }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: { color: '#ffffff' }
-                }
-            }
-        }
-    });
-}
-
-// Empieza loyalty
+//INICIA LOYALTY
 
 $(document).ready(function() {
-
-    // 1. Inicializar Isotope
+    // 1. Inicializar Isotope (Igual que antes)
     var $grid = $('.grid').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',
         transitionDuration: '0.4s'
     });
 
-    // 2. Lógica de Filtrado
-    $('.filter-button-group').on('click', 'button', function() {
-        // Obtener el valor del filtro (ej: .deuda, .variable o *)
-        var filterValue = $(this).attr('data-filter');
+    // 2. CREAR EL MOSAICO DE DIFERENTES CLIENTES
+    const ctx = document.getElementById('filterChart').getContext('2d');
+    let fillPattern;
+    
+    // Lista de tus imágenes (puedes añadir más nombres de tus archivos .png)
+    const imageSources = ['images/a.png', 'images/b.png', 'images/c.png', 'images/d.png'];
+    let loadedImages = 0;
+    const images = [];
+
+    // Cargamos todas las imágenes primero
+    imageSources.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedImages++;
+            images.push(img);
+            if (loadedImages === imageSources.length) {
+                createMultiPattern();
+            }
+        };
+    });
+
+    function createMultiPattern() {
+        const tempCanvas = document.createElement('canvas');
+        const tCtx = tempCanvas.getContext('2d');
         
-        // Aplicar el filtro en el grid
+        // Creamos un cuadro de 40x40 que tendrá 4 fotos miniatura (2x2)
+        tempCanvas.width = 40;
+        tempCanvas.height = 40;
+
+        // Dibujamos las 4 fotos escaladas en el mosaico
+        if (images[0]) tCtx.drawImage(images[0], 0, 0, 20, 20);
+        if (images[1]) tCtx.drawImage(images[1], 20, 0, 20, 20);
+        if (images[2]) tCtx.drawImage(images[2], 0, 20, 20, 20);
+        if (images[3]) tCtx.drawImage(images[3], 20, 20, 20, 20);
+
+        fillPattern = ctx.createPattern(tempCanvas, 'repeat');
+        initChart();
+    }
+
+    let filterChart;
+
+    function initChart() {
+        filterChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total', 'Hombres', 'Mujeres', 'Casados', 'Solteros', 'Deuda', 'Variable', 'Mixtos'],
+                datasets: [{
+                    label: 'Clientes',
+                    data: [0, 0, 0, 0, 0, 0, 0, 0], // Inicia en 0
+                    backgroundColor: fillPattern,
+                    borderColor: '#00e5ff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        max: 60, 
+                        ticks: { color: '#aaa' },
+                        grid: { color: '#333' }
+                    },
+                    x: { ticks: { color: '#fff', font: { size: 11 } } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    // 3. Función de Conteo (Solo se activa al filtrar)
+    function refreshStats() {
+        if (!filterChart) return;
+        var $visibles = $grid.isotope('getFilteredItemElements');
+        var visibles = $($visibles);
+
+        filterChart.data.datasets[0].data = [
+            visibles.length,
+            visibles.filter('.hombres').length,
+            visibles.filter('.mujeres').length,
+            visibles.filter('.casados').length,
+            visibles.filter('.solteros').length,
+            visibles.filter('.deuda').length,
+            visibles.filter('.variable').length,
+            visibles.filter('.mixtos').length
+        ];
+        filterChart.update();
+    }
+
+    // 4. Lógica de Botones
+    $('.filter-button-group').on('click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
 
-        // 3. Cambiar la clase "active" visualmente
         $('.filter-button-group button').removeClass('active');
         $(this).addClass('active');
+
+        $grid.one('arrangeComplete', function() {
+            refreshStats();
+        });
     });
 
-    // Opcional: Asegurar que el grid se acomode al cargar todas las imágenes
-    $grid.imagesLoaded().progress( function() {
+    $grid.imagesLoaded().progress(function() {
         $grid.isotope('layout');
-    });
-
-});
-
-$(document).ready(function() {
-    // Inicializa Isotope en el contenedor .grid
-    var $grid = $('.grid').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows'
-    });
-
-    // Re-acomoda cuando carguen las imágenes
-    $grid.imagesLoaded().progress( function() {
-        $grid.isotope('layout');
-    });
-
-    // Configura el clic de los botones
-    $('.filter-button-group').on('click', 'button', function() {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-        
-        // Estilo visual de botón activo
-        $('.filter-button-group button').removeClass('active');
-        $(this).addClass('active');
     });
 });
