@@ -7,6 +7,7 @@
     <title>Actinver - Fondos de Inversión</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -28,14 +29,21 @@
                 <div class="collapse navbar-collapse justify-content-center" id="menuActinver">
                     <div class="navbar-nav gap-2 py-3 py-lg-0">
                         <a href="index.html" class="nav-link p-0"><button class="nav-btn-custom">General</button></a>
-                        <a href="sinergia.html" class="nav-link p-0"><button class="nav-btn-custom">Sinergia</button></a>
-                        <a href="productos.html" class="nav-link p-0"><button class="nav-btn-custom">Productos</button></a>
-                        <a href="asesores.html" class="nav-link p-0"><button class="nav-btn-custom">Asesores</button></a>
+                        <a href="sinergia.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Sinergia</button></a>
+                        <a href="productos.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Productos</button></a>
+                        <a href="asesores.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Asesores</button></a>
                         <a href="seguros.html" class="nav-link p-0"><button class="nav-btn-custom">Seguros</button></a>
-                        <a href="compliance.html" class="nav-link p-0"><button class="nav-btn-custom">Compliance</button></a>
-                        <a href="benchmark.html" class="nav-link p-0"><button class="nav-btn-custom">Benchmark</button></a>
-                        <a href="marketing.html" class="nav-link p-0"><button class="nav-btn-custom">Marketing</button></a>
-                        <a href="loyalty_2.html" class="nav-link p-0"><button class="nav-btn-custom active">Loyalty</button></a>
+                        <a href="compliance.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Compliance</button></a>
+                        <a href="benchmark.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Benchmark</button></a>
+                        <a href="marketing.html" class="nav-link p-0"><button
+                                class="nav-btn-custom">Marketing</button></a>
+                        <a href="loyalty_2.html" class="nav-link p-0"><button
+                                class="nav-btn-custom active">Loyalty</button></a>
                     </div>
                 </div>
 
@@ -66,73 +74,158 @@
                 <button class="btn btn-sm btn-outline-info px-3" data-filter=".variable">Fondos de Renta
                     Variable</button>
                 <button class="btn btn-sm btn-outline-info px-3" data-filter=".mixtos">Fondos Mixtos</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".mujeres">Mujeres</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".hombres">Hombres</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".casados">Casados</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".solteros">Solteros</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".25-40">25 - 40 años</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".40-50">40 - 50 años</button>
+                <button class="btn btn-sm btn-outline-info px-3" data-filter=".mas50">Mayores de 50 años</button>
             </div>
 
+
+
             <div class="grid">
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <<div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/d.png" data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
-                <div class="grid-item mixtos"><img src="images/e.png" data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/a.png" data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
-                <div class="grid-item deuda"><img src="images/b.png" data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
-                <div class="grid-item variable"><img src="images/c.png" data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item deuda mixtos mujeres solteros 25-40"><img src="images/a.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item variable hombres solteros 25-40"><img src="images/b.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos hombres casados 40-50"><img src="images/c.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mixtos variable hombres casados 40-50"><img src="images/d.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item deuda casados 40-50 mujeres"><img src="images/e.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 mixtos variable"><img src="images/f.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 40-50 variable deuda"><img src="images/g.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 25-40 mixtos"><img src="images/h.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 deuda variable"><img src="images/i.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mixtos 40-50"><img src="images/j.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 mixtos deuda 25-40"><img src="images/k.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 25-40 deuda mixtos"><img src="images/l.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros mas50 deuda"><img src="images/m.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 25-40 variable"><img src="images/n.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros mas50 deuda"><img src="images/o.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 variable mixtos deuda"><img src="images/p.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 40-50 mixtos"><img src="images/q.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 40-50 deuda variable"><img src="images/r.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas50"><img src="images/r2.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros 40-50 mixtos variable"><img src="images/r3.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 deuda"><img src="images/r4.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros 40-50 variable mixtos"><img src="images/r5.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas50 variable"><img src="images/r6.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 25-40"><img src="images/r7.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+
+                <div class="grid-item mujeres casados mas50 variable mixtos"><img src="images/r9.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 "><img src="images/s.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mas50 deuda mixtos><img src=" images/s1.png"
+                    data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 deuda"><img src="images/s2.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros mas50 mixtos"><img src="images/s3.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados variable"><img src="images/s4.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas 50 variable deuda"><img src="images/s5.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 deuda"><img src="images/s6.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 deuda variable mixto"><img src="images/s7.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mas50 deuda mixtos"><img src="images/s8.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas50 mixtos"><img src="images/s9.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres mas50 casados variable"><img src="images/t.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 40-50 deuda mixtos"><img src="images/t2.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros 40-50 deuda"><img src="images/t3.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas50 mixtos"><img src="images/t4.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mas50 variable"><img src="images/t5.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 mixto variable deuda"><img src="images/t6.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 "><img src="images/t7.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 mixtos"><img src="images/u.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 mixtos"><img src="images/u2.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 40-50 variable deuda"><img src="images/u3.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 deuda"><img src="images/u4.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados 40-50 mixtos deuda"><img src="images/u5.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 deuda"><img src="images/u6.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mas50 variable deuda"><img src="images/u7.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros 25-40 mixtos"><img src="images/u8.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros mas50 mixtos"><img src="images/v.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 25-40 variable"><img src="images/v2.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados mas50 mixtos"><img src="images/v3.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 40-50 deuda"><img src="images/v4.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item hombres casados 40-50 deuda variable"><img src="images/v5.png"
+                        data-bs-toggle="modal" data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 mixtos"><img src="images/v8.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres solteros 25-40 variable"><img src="images/v9.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteC" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros mas50 variable"><img src="images/w.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteD" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 mixtos"><img src="images/x.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteE" style="cursor: pointer;"></div>
+                <div class="grid-item hombres solteros mas50 deuda"><img src="images/y.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteA" style="cursor: pointer;"></div>
+                <div class="grid-item mujeres casados mas50 deuda"><img src="images/z.png" data-bs-toggle="modal"
+                        data-bs-target="#modalClienteB" style="cursor: pointer;"></div>
+
+
+            </div><BR>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card-custom p-3 shadow" style="background: rgba(0,0,0,0.3); border: 1px solid #17a2b8;">
+                        <h6 class="text-info small fw-bold mb-3">RESUMEN ESTADÍSTICO DEL FILTRO</h6>
+                        <div style="height: 180px;">
+                            <canvas id="filterChart"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
         </div>
     </div>
 
