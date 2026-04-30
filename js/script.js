@@ -973,3 +973,15 @@ $(document).ready(function() {
         $grid.isotope('layout');
     });
 });
+
+// MAS DE LOYALTY
+
+// --- FIX DE ISOTOPE PARA MODALES ---
+
+// Este código detecta cuando abres o cierras una modal (como la de Sandra o Francisco)
+// y obliga a las fotos a reacomodarse para que no se "compacten" a la izquierda.
+$('.modal').on('shown.bs.modal hidden.bs.modal', function () {
+    setTimeout(function() {
+        $grid.isotope('layout');
+    }, 200); // Le damos un pequeño tiempo para que la animación de la modal termine
+});
