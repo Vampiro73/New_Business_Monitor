@@ -694,3 +694,37 @@ body.theme-dark {
 .card-custom {
     height: auto !important;
 }
+
+/* LOYALTY */
+
+/* --- FIX DE RESPONSIVIDAD LOYALTY --- */
+
+/* Evita que los filtros se salgan por la derecha en móviles */
+.filter-button-group {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Esto hace que los botones bajen a la siguiente línea */
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+/* Ajuste de las fotos para que no se amontonen */
+.grid {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+.grid-item {
+    width: 25%; /* 4 fotos por fila en PC */
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .grid-item {
+        width: 50%; /* 2 fotos por fila en celulares */
+    }
+}
+
+/* Evita el salto visual al abrir las modales de los clientes */
+body.modal-open {
+    padding-right: 0 !important;
+}
